@@ -1,9 +1,9 @@
 name: Abode Camera Streamer
-version: 1.0.0
+version: 1.0.1
 description: Provides streaming video from Abode security cameras
 url: https://github.com/tradel/abode2rtc
-image: tradel/abode2rtc
-arch: [armhf, armv7, aarch64, amd64, i386]
+image: "docker.io/tradel/addon-{arch}-abode2rtc"
+arch: [amd64]
 
 slug: abode2rtc
 init: false
@@ -16,7 +16,7 @@ ingress: true
 
 ingress_port: 1984
 panel_icon: mdi:camera-wireless
-map: ["config:ro", "media", "ssl"]
+map: ["config:ro"]
 
 ports:
   1984/tcp: 1984
