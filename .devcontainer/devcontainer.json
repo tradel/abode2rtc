@@ -1,0 +1,30 @@
+{
+  "name": "Devcontainer for Abode2RTC addon development",
+  "image": "ghcr.io/home-assistant/devcontainer:addons",
+  "appPort": ["8123:8123", "4357:4357"],
+  "postStartCommand": "bash devcontainer_bootstrap",
+  "runArgs": ["-e", "GIT_EDITOR=code --wait", "--privileged"],
+  "containerEnv": {
+    "WORKSPACE_DIRECTORY": "${containerWorkspaceFolder}"
+  },
+  "mounts": ["type=volume,target=/var/lib/docker"],
+  "customizations": {
+    "vscode": {
+      "extensions": ["timonwong.shellcheck", "esbenp.prettier-vscode"],
+      "settings": {
+        "terminal.integrated.profiles.linux": {
+          "zsh": {
+            "path": "/usr/bin/zsh"
+          }
+        }
+      }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/abode2rtc,type=bind,consistency=delegated",
+    "workspaceFolder": "/workspaces/abode2rtc",
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "editor.formatOnPaste": false,
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "files.trimTrailingWhitespace": true
+  }
+}
