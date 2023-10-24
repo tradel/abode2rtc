@@ -22,4 +22,6 @@ jobs:
           args: |
             --all \
             --target addon-folder \
-            --docker-hub tradel
+            --docker-hub docker.io/tradel \
+            --docker-user ${{ secrets.DOCKERHUB_USERNAME }} \
+            --docker-password ${{ secrets.DOCKERHUB_TOKEN }}
