@@ -1,5 +1,5 @@
 name: Abode Camera Streamer
-version: 1.0.1
+version: 1.0.2
 description: Provides streaming video from Abode security cameras
 url: https://github.com/tradel/abode2rtc
 image: "docker.io/tradel/addon-{arch}-abode2rtc"
